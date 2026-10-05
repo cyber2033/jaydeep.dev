@@ -49,7 +49,7 @@ export const PROJECTS: Project[] = [
     ],
     tags: ['Next.js', 'FastAPI', 'LangChain', 'ChromaDB', 'OpenAI / Gemini', 'JWT'],
     accent: '#0071e3',
-    githubUrl: 'https://github.com/JaydeepDeore',
+    githubUrl: 'https://github.com/cyber2033',
     palette: [
       { name: 'Deep Ink', hex: '#121118' },
       { name: 'Off-White', hex: '#FAF9F6' },
@@ -83,7 +83,7 @@ export const PROJECTS: Project[] = [
     ],
     tags: ['Python', 'XGBoost', 'SHAP Values', 'Scikit-learn', 'NLP', 'Explainable AI'],
     accent: '#34c759',
-    githubUrl: 'https://github.com/JaydeepDeore',
+    githubUrl: 'https://github.com/cyber2033',
     palette: [
       { name: 'Deep Ink', hex: '#121118' },
       { name: 'Clinical White', hex: '#FFFFFF' },
@@ -117,7 +117,7 @@ export const PROJECTS: Project[] = [
     ],
     tags: ['TensorFlow', 'Keras', 'TFLite Edge', 'React', 'Node.js', 'Computer Vision'],
     accent: '#0071e3',
-    githubUrl: 'https://github.com/JaydeepDeore',
+    githubUrl: 'https://github.com/cyber2033',
     palette: [
       { name: 'Earth Ink', hex: '#16151E' },
       { name: 'Clean White', hex: '#FFFFFF' },
@@ -151,7 +151,7 @@ export const PROJECTS: Project[] = [
     ],
     tags: ['HTML5 Canvas', 'JavaScript', 'C Memory Model', 'Data Structures', 'Systems'],
     accent: '#0071e3',
-    githubUrl: 'https://github.com/JaydeepDeore',
+    githubUrl: 'https://github.com/cyber2033',
     palette: [
       { name: 'Deep Ink', hex: '#121118' },
       { name: 'Canvas White', hex: '#FFFFFF' },

@@ -32,46 +32,74 @@ export function ExactCredentials() {
       detail: '25/25 challenges solved, 620 points earned. Additional star badges in C++ and Python.',
       category: 'Competitive Programming',
       badge: '#1 Rank',
+      verifyUrl: 'https://www.hackerrank.com/certificates/7b0e31b4bf6b',
     },
     {
       title: 'Solved 200+ Problems on LeetCode',
       detail: 'Consistent problem solving across Data Structures, Dynamic Programming, and Graph Algorithms.',
       category: 'Algorithms',
       badge: '200+ Solved',
+      verifyUrl: 'https://leetcode.com',
     },
     {
       title: 'IIT Delhi zkFHE Hackathon Finalist',
       detail: 'Airchains x BECon 2025 organized by IIT Delhi, competed as part of Team Warriors.',
       category: 'Zero-Knowledge & AI',
       badge: 'IIT Delhi',
+      verifyUrl: 'https://drive.google.com/file/d/1xL18bxDwxxcj5_4rk6SuOwxqKnRtqY2l/view?usp=sharing',
     },
     {
       title: 'Hack-N-Win 3.0 Hackathon',
       detail: 'Organized by D4 Community in collaboration with CGC University, Mohali.',
       category: 'Hackathon Innovation',
       badge: 'CGC Mohali',
+      verifyUrl: 'https://drive.google.com/file/d/1V03SCIz4MOCSeDR-489Fahxir4O820of/view?usp=sharing',
     },
   ]
 
   const certifications = [
-    'Deep Learning for Developers — Infosys Springboard (Sep 2026)',
-    'Programming Using C++ — Infosys Springboard (Aug 2025)',
-    'Database Management System Part-1 — Infosys Springboard (Aug 2026)',
-    'Cyber Security Essentials (15+ hrs) — Tech Veda (Mar 2025)',
-    'Computer Programming (72 Hours) — Lovely Professional University, iamneo (2025)',
-    'C# (Basic) — HackerRank (2025)',
+    {
+      name: 'Deep Learning for Developers — Infosys Springboard',
+      date: 'Sep 2026',
+      url: 'https://drive.google.com/file/d/1geKm80xvGiSSv-sYJgEjkaBDnWLhllrJ/view?usp=sharing',
+    },
+    {
+      name: 'Programming Using C++ — Infosys Springboard',
+      date: 'Aug 2025',
+      url: 'https://drive.google.com/file/d/1q9xA8Fr0P3V3RVUel9oTbl_Yje9WMnkI/view?usp=sharing',
+    },
+    {
+      name: 'Database Management System Part-1 — Infosys Springboard',
+      date: 'Aug 2026',
+      url: 'https://drive.google.com/file/d/1FtGDPb5WYq2ZT9xcDxCQI6hejEaGMqDK/view?usp=sharing',
+    },
+    {
+      name: 'Cyber Security Essentials (15+ hrs) — Tech Veda',
+      date: 'Mar 2025',
+      url: 'https://drive.google.com/file/d/15VO_wuL2Lr-bSbShQ2O2WqtQejRNY0Ui/view?usp=sharing',
+    },
+    {
+      name: 'Computer Programming (72 Hours) — LPU, iamneo',
+      date: '2025',
+      url: 'https://drive.google.com/file/d/1qPpnDaxlBiRurEl3eInJ6G_zsnaoZvDk/view?usp=sharing',
+    },
+    {
+      name: 'C# (Basic) — HackerRank',
+      date: '2025',
+      url: 'https://www.hackerrank.com/certificates/7b0e31b4bf6b',
+    },
   ]
 
   return (
     <section id="credentials" style={{ borderTop: '1px solid var(--theme-outline-variant)', paddingBlock: '6rem' }}>
       <div className="section-header">
-        <p className="section-label">Foundations & Records</p>
+        <p className="section-label">Foundations &amp; Records</p>
         <h2>
           Education, honors<br />
           <span>and competitive records.</span>
         </h2>
         <p className="intro">
-          Academic foundation from Lovely Professional University, competitive rankings on HackerRank & LeetCode, and verified industry certifications.
+          Academic foundation from Lovely Professional University, competitive rankings on HackerRank &amp; LeetCode, and verified industry certifications.
         </p>
       </div>
 
@@ -107,17 +135,33 @@ export function ExactCredentials() {
       {/* Achievements Row */}
       <div style={{ marginBottom: '3rem' }}>
         <h3 style={{ fontSize: '1.35rem', fontWeight: 500, marginBottom: '1.5rem', color: 'var(--theme-surface-on-surface)' }}>
-          Competitive Programming & Hackathons
+          Competitive Programming &amp; Hackathons
         </h3>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '1rem' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '1rem' }}>
           {achievements.map((ach) => (
-            <article key={ach.title} className="faq-item" style={{ padding: '1.5rem' }}>
-              <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '0.5rem' }}>
-                <span style={{ fontSize: '0.72rem', color: '#6f7278', textTransform: 'uppercase' }}>{ach.category}</span>
-                <span style={{ fontSize: '0.75rem', fontWeight: 'bold', color: 'var(--theme-surface-on-surface)', background: 'var(--theme-surface-surface-container-higher)', padding: '0.15rem 0.5rem', borderRadius: '999px' }}>{ach.badge}</span>
+            <article key={ach.title} className="faq-item" style={{ padding: '1.5rem', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+              <div>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.5rem' }}>
+                  <span style={{ fontSize: '0.72rem', color: '#6f7278', textTransform: 'uppercase' }}>{ach.category}</span>
+                  <span style={{ fontSize: '0.75rem', fontWeight: 'bold', color: 'var(--theme-surface-on-surface)', background: 'var(--theme-surface-surface-container-higher)', padding: '0.15rem 0.5rem', borderRadius: '999px' }}>{ach.badge}</span>
+                </div>
+                <h4 style={{ fontSize: '1.05rem', margin: '0.5rem 0', fontWeight: 500, color: 'var(--theme-surface-on-surface)' }}>{ach.title}</h4>
+                <p style={{ fontSize: '0.82rem', margin: '0 0 1rem 0', color: 'var(--theme-surface-on-surface-variant)', lineHeight: '1.6' }}>{ach.detail}</p>
               </div>
-              <h4 style={{ fontSize: '1.05rem', margin: '0.5rem 0', fontWeight: 500, color: 'var(--theme-surface-on-surface)' }}>{ach.title}</h4>
-              <p style={{ fontSize: '0.82rem', margin: 0, color: 'var(--theme-surface-on-surface-variant)', lineHeight: '1.6' }}>{ach.detail}</p>
+
+              {ach.verifyUrl && (
+                <div style={{ paddingTop: '0.75rem', borderTop: '1px solid var(--theme-outline-variant)' }}>
+                  <a
+                    href={ach.verifyUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style={{ fontSize: '0.75rem', color: '#8cecff', textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: '0.25rem', fontFamily: 'monospace' }}
+                  >
+                    <span>Verify Credential</span>
+                    <span>↗</span>
+                  </a>
+                </div>
+              )}
             </article>
           ))}
         </div>
@@ -128,13 +172,37 @@ export function ExactCredentials() {
         <h3 style={{ fontSize: '1.35rem', fontWeight: 500, marginBottom: '1.5rem', color: 'var(--theme-surface-on-surface)' }}>
           Verified Technical Certifications
         </h3>
-        <ul className="stack-list">
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '0.85rem' }}>
           {certifications.map((c) => (
-            <li key={c} style={{ fontSize: '0.85rem', padding: '0.6rem 1.1rem' }}>
-              {c}
-            </li>
+            <a
+              key={c.name}
+              href={c.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="faq-item"
+              style={{
+                padding: '0.9rem 1.25rem',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'space-between',
+                textDecoration: 'none',
+                transition: 'all 0.2s ease',
+              }}
+            >
+              <div>
+                <div style={{ fontSize: '0.85rem', fontWeight: 500, color: 'var(--theme-surface-on-surface)', marginBottom: '0.2rem' }}>
+                  {c.name}
+                </div>
+                <div style={{ fontSize: '0.72rem', color: '#6f7278', fontFamily: 'monospace' }}>
+                  {c.date}
+                </div>
+              </div>
+              <span style={{ color: '#8cecff', fontSize: '0.85rem', marginLeft: '0.75rem' }}>
+                ↗
+              </span>
+            </a>
           ))}
-        </ul>
+        </div>
       </div>
     </section>
   )

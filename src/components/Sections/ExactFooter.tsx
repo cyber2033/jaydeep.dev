@@ -41,10 +41,10 @@ export function ExactFooter() {
         </p>
 
         <div className="footer-social" aria-label="Social links">
-          <a href="https://github.com/JaydeepDeore" target="_blank" rel="noopener noreferrer">
+          <a href="https://github.com/cyber2033" target="_blank" rel="noopener noreferrer">
             GitHub
           </a>
-          <a href="https://linkedin.com/in/jaydeep-deore" target="_blank" rel="noopener noreferrer">
+          <a href="https://www.linkedin.com/in/jaydeep-deore-14ba96320/" target="_blank" rel="noopener noreferrer">
             LinkedIn
           </a>
           <a href="mailto:jaydeepdeore85@gmail.com">

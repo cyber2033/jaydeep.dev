@@ -237,7 +237,7 @@ export function ExactContact() {
                 </span>
                 <div style={{ display: 'flex', gap: '0.6rem', flexWrap: 'wrap' }}>
                   <a
-                    href="https://github.com/JaydeepDeore"
+                    href="https://github.com/cyber2033"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="contact-button secondary"
@@ -248,7 +248,7 @@ export function ExactContact() {
                   </a>
 
                   <a
-                    href="https://linkedin.com/in/jaydeep-deore"
+                    href="https://www.linkedin.com/in/jaydeep-deore-14ba96320/"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="contact-button secondary"
