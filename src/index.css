@@ -1,0 +1,341 @@
+@import "./codarox.css";
+
+/* Exact Codarox Utilities and Overrides */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Ensure Material Symbols look sharp */
+.material-symbols-outlined {
+  font-family: 'Material Symbols Outlined';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 20px;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  -webkit-font-feature-settings: 'liga';
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Active navigation link indicator */
+header a.is-active {
+  color: #000;
+  font-weight: 500;
+}
+
+/* Quality Dashboard Target Counter animation */
+.quality-score-value {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Case Study Modal (Codarox High-Fidelity Style) */
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(18, 19, 23, 0.65);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+}
+
+.modal-content {
+  background: #ffffff;
+  border-radius: 2rem;
+  border: 1px solid rgba(33, 34, 38, 0.08);
+  box-shadow: 0 30px 90px rgba(0, 0, 0, 0.25);
+  max-width: 720px;
+  width: 100%;
+  max-height: 88vh;
+  overflow-y: auto;
+  position: relative;
+  z-index: 10001;
+}
+
+/* Mobile download cv button */
+.mobile-download span.material-symbols-outlined {
+  font-size: 1.2rem;
+}
+
+/* ==========================================================================
+   CSS GRID SUBGRID ARCHITECTURE FIX FOR REACT ROOT
+   In Codarox, body is the direct parent of <main> and sections:
+   body {
+     display: grid;
+     grid-template-columns: [fullbleed-start] 3rem [main-start] 1fr [main-end] 3rem [fullbleed-end];
+   }
+   In React, #root sits between body and main.
+   We set #root to display: contents so it creates no box in the formatting context,
+   and we guarantee that main, sections, and footer span fullbleed, while their
+   direct children span the centered [main] column (with 3rem margins on desktop,
+   1rem on mobile).
+   ========================================================================== */
+
+#root {
+  display: contents;
+}
+
+body > #root > main,
+#root > main,
+main {
+  display: grid !important;
+  grid-template-columns: [fullbleed-start] 3rem [main-start] 1fr [main-end] 3rem [fullbleed-end] !important;
+  grid-template-columns: subgrid !important;
+  grid-column: fullbleed !important;
+  width: 100% !important;
+}
+
+@media not (min-width: 930px) {
+  body > #root > main,
+  #root > main,
+  main {
+    grid-template-columns: [fullbleed-start] 1rem [main-start] 1fr [main-end] 1rem [fullbleed-end] !important;
+    grid-template-columns: subgrid !important;
+  }
+}
+
+main > section,
+section,
+#footer,
+footer {
+  grid-column: fullbleed !important;
+  display: grid !important;
+  grid-template-columns: [fullbleed-start] 3rem [main-start] 1fr [main-end] 3rem [fullbleed-end] !important;
+  grid-template-columns: subgrid !important;
+  width: 100% !important;
+}
+
+@media not (min-width: 930px) {
+  main > section,
+  section,
+  #footer,
+  footer {
+    grid-template-columns: [fullbleed-start] 1rem [main-start] 1fr [main-end] 1rem [fullbleed-end] !important;
+    grid-template-columns: subgrid !important;
+  }
+}
+
+/* Explicit assignment of direct section children to the centered 'main' grid column */
+#about > *,
+#projects > *,
+#engineering-quality > *,
+#engineering-lab > *,
+#expertise > *,
+#skills > *,
+#credentials > *,
+#faq > *,
+#contact > *,
+#footer > :not(#footer-wave-canvas) {
+  grid-column: main !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
+}
+
+/* ==========================================================================
+   CODAROX EXACT FLOATING HEADER CAPSULE (Desktop & Mobile)
+   ========================================================================== */
+
+.header-wrapper {
+  position: fixed !important;
+  left: 0 !important;
+  right: 0 !important;
+  z-index: 1000 !important;
+  pointer-events: none !important;
+}
+
+@media (min-width: 930px) {
+  .header-wrapper {
+    top: 1.25rem !important;
+    display: flex !important;
+    justify-content: center !important;
+  }
+
+  .header-wrapper > header {
+    width: min(calc(100% - 3rem), 1220px) !important;
+    min-height: 4.1rem !important;
+    margin-inline: auto !important;
+    padding: 0.55rem 0.85rem 0.55rem 1.4rem !important;
+    display: grid !important;
+    grid-template-columns: 1fr auto 1fr !important;
+    align-items: center !important;
+    gap: 1rem !important;
+    border: 1px solid rgba(18, 19, 23, 0.12) !important;
+    border-radius: 999px !important;
+    background: rgba(255, 255, 255, 0.88) !important;
+    backdrop-filter: blur(28px) !important;
+    -webkit-backdrop-filter: blur(28px) !important;
+    box-shadow: 0 16px 50px rgba(0, 0, 0, 0.08), 0 2px 6px rgba(0, 0, 0, 0.04) !important;
+    pointer-events: auto !important;
+  }
+
+  .desktop-header-brand {
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 0.75rem !important;
+    color: #121317 !important;
+    text-decoration: none !important;
+    font-size: 0.95rem !important;
+    font-weight: 550 !important;
+    letter-spacing: -0.02em !important;
+    justify-self: start !important;
+  }
+
+  .desktop-header-brand img {
+    width: 1.85rem !important;
+    height: 1.85rem !important;
+    border-radius: 999px !important;
+    object-fit: cover !important;
+  }
+
+  .header-wrapper > header nav {
+    justify-self: center !important;
+  }
+
+  .header-wrapper > header nav ul {
+    display: flex !important;
+    flex-direction: row !important;
+    gap: 0.25rem !important;
+    align-items: center !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    list-style: none !important;
+  }
+
+  .header-wrapper > header nav a {
+    padding: 0.65rem 1.1rem !important;
+    border-radius: 999px !important;
+    color: #41444b !important;
+    background: transparent !important;
+    font-size: 0.86rem !important;
+    font-weight: 550 !important;
+    text-decoration: none !important;
+    transition: color 0.2s ease, background 0.2s ease !important;
+  }
+
+  .header-wrapper > header nav a:hover,
+  .header-wrapper > header nav a:focus-visible {
+    color: #ffffff !important;
+    background: #121317 !important;
+  }
+
+  .header-wrapper > header > #download-cv,
+  .header-wrapper > header > .button {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 0.5rem !important;
+    justify-self: end !important;
+    margin-left: 0 !important;
+    min-height: 2.75rem !important;
+    padding: 0.75rem 1.35rem !important;
+    font-size: 0.85rem !important;
+    font-weight: 600 !important;
+    border-radius: 999px !important;
+    background: #121317 !important;
+    color: #ffffff !important;
+    border: none !important;
+    cursor: pointer !important;
+    transition: background 0.2s ease, transform 0.2s ease !important;
+  }
+
+  .header-wrapper > header > #download-cv:hover,
+  .header-wrapper > header > .button:hover {
+    background: #2f3034 !important;
+    transform: translateY(-1px) !important;
+  }
+}
+
+@media not (min-width: 930px) {
+  .header-wrapper {
+    top: 0.5rem !important;
+  }
+}
+
+/* ==========================================================================
+   CODAROX WELCOME HERO VERTICAL CENTERING & FLOATING HEADER OFFSET
+   ========================================================================== */
+
+#welcome {
+  position: relative !important;
+  overflow: hidden !important;
+  display: grid !important;
+  grid-template-columns: [fullbleed-start] 3rem [main-start] 1fr [main-end] 3rem [fullbleed-end] !important;
+  grid-template-columns: subgrid !important;
+  min-height: 100vh !important;
+  min-height: 100dvh !important;
+  height: 100vh !important;
+  height: 100dvh !important;
+  align-content: center !important;
+  align-items: center !important;
+  justify-content: center !important;
+  justify-items: center !important;
+  text-align: center !important;
+  padding-top: 3.5rem !important;
+  box-sizing: border-box !important;
+}
+
+@media not (min-width: 930px) {
+  #welcome {
+    grid-template-columns: [fullbleed-start] 1rem [main-start] 1fr [main-end] 1rem [fullbleed-end] !important;
+    grid-template-columns: subgrid !important;
+    padding-top: 4.5rem !important;
+  }
+}
+
+#welcome > :not(#welcome-wave-canvas) {
+  grid-column: main !important;
+  width: 100% !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  text-align: center !important;
+  z-index: 2 !important;
+}
+
+.welcome-content {
+  position: relative !important;
+  z-index: 2 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  text-align: center !important;
+  margin: auto !important;
+}
+
+#welcome p {
+  font-size: clamp(2.5rem, 5.5vw, 4.5rem) !important;
+  text-align: center !important;
+  font-weight: 500 !important;
+  color: var(--theme-surface-on-surface) !important;
+  line-height: 1.15 !important;
+  margin: 1.5rem 0 0 0 !important;
+}
+
+#welcome p span {
+  display: block !important;
+  font-size: 0.65em !important;
+  color: var(--theme-surface-on-surface-variant) !important;
+  font-weight: 400 !important;
+  margin-top: 0.6rem !important;
+}
+
+/* Ensure canvas elements span the full background without affecting main layout */
+#welcome-wave-canvas,
+#contact-wave-canvas,
+#footer-wave-canvas {
+  grid-column: fullbleed;
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
